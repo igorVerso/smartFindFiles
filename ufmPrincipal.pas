@@ -78,6 +78,8 @@ type
     btMenuSobre: TSpeedButton;
     shpMenu: TShape;
     ilPrincipal: TImageList;
+    btLimparProcuraArquivo: TButton;
+    btLimparCopiaArquivo: TButton;
     procedure btTextClick(Sender: TObject);
     procedure btProcuraClick(Sender: TObject);
     procedure imMenuClick(Sender: TObject);
@@ -86,6 +88,8 @@ type
     procedure btBuscaPastaProcuraClick(Sender: TObject);
     procedure btBuscaPastaCopiaClick(Sender: TObject);
     procedure btMenuSobreClick(Sender: TObject);
+    procedure btLimparProcuraArquivoClick(Sender: TObject);
+    procedure btLimparCopiaArquivoClick(Sender: TObject);
   private
     function SelectADirectory(Title: string): string;
     procedure BuscarListaDeArquivos;
@@ -133,6 +137,18 @@ end;
 procedure TfmPrincipal.btBuscarListaClick(Sender: TObject);
 begin
   BuscarListaDeArquivos;
+end;
+
+procedure TfmPrincipal.btLimparCopiaArquivoClick(Sender: TObject);
+begin
+  edCopiaArquivo.Clear;
+  edCopiaArquivo.SetFocus;
+end;
+
+procedure TfmPrincipal.btLimparProcuraArquivoClick(Sender: TObject);
+begin
+  edProcuraArquivo.Clear;
+  edProcuraArquivo.SetFocus;
 end;
 
 procedure TfmPrincipal.btMenuSairClick(Sender: TObject);
